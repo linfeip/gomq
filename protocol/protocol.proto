@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package protocol;
+
+option go_package = "./;protocol";
+
+message CommitLogPacket {
+  uint32 magic = 1;
+  bytes body  = 2;
+  string topic = 3;
+  string msgId = 4;
+  uint32 checksum = 5;
+}

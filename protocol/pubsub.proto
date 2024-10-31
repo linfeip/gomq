@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package protocol;
+
+option go_package = "./;protocol";
+
+service PubsubService {
+  rpc Publish(PublishArgs) returns (PublishReply);
+  rpc Consume(ConsumeArgs) returns (stream ConsumeReply);
+}
+
+message PublishArgs {
+  TopicMessage message = 1;
+}
+
+message PublishReply {
+}
+
+message ConsumeArgs {
+  string topic = 1;
+  int32 queue = 2;
+}
+
+message ConsumeReply {
+  TopicMessage message = 1;
+}
+
+message TopicMessage {
+  string msgId = 1;
+  string topic = 2;
+  bytes body = 3;
+  uint32 checksum = 4;
+}
