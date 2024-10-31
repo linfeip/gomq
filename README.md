@@ -50,8 +50,8 @@ goarch: amd64
 pkg: github.com/linfeip/gomq/example
 cpu: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 BenchmarkRocket
-BenchmarkRocket-8   	   73480	     83635 ns/op	    3581 B/op	      61 allocs/op
+BenchmarkRocket-8   	   77319	     71759 ns/op	    3587 B/op	      61 allocs/op
 BenchmarkGoMQ
-BenchmarkGoMQ-8     	  175611	     33492 ns/op	    9700 B/op	     174 allocs/op
+BenchmarkGoMQ-8     	  201670	     29778 ns/op	    5184 B/op	      94 allocs/op
 PASS
 ```

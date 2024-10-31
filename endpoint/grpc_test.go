@@ -41,6 +41,10 @@ func init() {
 	testPubsub = protocol.NewPubsubServiceClient(testClient)
 }
 
+func TestServer_Start(t *testing.T) {
+	select {}
+}
+
 func TestGrpc(t *testing.T) {
 	go func() {
 		for {

@@ -22,7 +22,7 @@ import (
 
 const topicQueueNum = 8
 
-var topicQueueFileSize = 1 * 1024 * 1024 // 128M
+var topicQueueFileSize = 128 * 1024 * 1024 // 128M
 
 // TopicInfo 记录topics数据, 每个topic下有多个queue, 每个queue有多个切割文件
 type TopicInfo struct {
