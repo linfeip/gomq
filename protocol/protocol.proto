@@ -4,10 +4,29 @@ package protocol;
 
 option go_package = "./;protocol";
 
+enum CommandOp {
+  None = 0;
+  Enqueue = 1;
+  EnqueueTo = 2;
+  Dequeue = 3;
+}
+
+message Command {
+  CommandOp op = 1;
+  CommitLogPacket packet = 2;
+  DequeueArgs dequeueArgs = 3;
+}
+
 message CommitLogPacket {
   uint32 magic = 1;
-  bytes body  = 2;
+  bytes body = 2;
   string topic = 3;
   string msgId = 4;
   uint32 checksum = 5;
+  int32 queue = 6;
+}
+
+message DequeueArgs {
+  int32 queue = 1;
+  string topic = 2;
 }

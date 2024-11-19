@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func NewServer(addr string, topicMgr *store.TopicManager) *Server {
+func NewServer(addr string, topicMgr *store.store) *Server {
 	return &Server{
 		addr:     addr,
 		topicMgr: topicMgr,
@@ -19,7 +19,7 @@ func NewServer(addr string, topicMgr *store.TopicManager) *Server {
 
 type Server struct {
 	addr     string
-	topicMgr *store.TopicManager
+	topicMgr *store.store
 }
 
 func (s *Server) Start(ctx context.Context) error {

@@ -10,7 +10,7 @@ import (
 	"github.com/linfeip/gomq/protocol"
 )
 
-var testMgr *TopicManager
+var testMgr Store
 var testPack = &protocol.CommitLogPacket{
 	Topic:    fmt.Sprintf("testTopic"),
 	Body:     []byte("Hello GOMQ"),
@@ -20,7 +20,7 @@ var testPack = &protocol.CommitLogPacket{
 
 func init() {
 	var err error
-	testMgr = NewTopicManager(context.Background(), "./test")
+	testMgr = NewStore(context.Background(), "./test")
 	err = testMgr.Init()
 	if err != nil {
 		panic(err)

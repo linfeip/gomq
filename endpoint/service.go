@@ -10,7 +10,7 @@ import (
 
 type service struct {
 	protocol.UnimplementedPubsubServiceServer
-	topicMgr *store.TopicManager
+	topicMgr *store.store
 }
 
 func (s *service) Publish(ctx context.Context, args *protocol.PublishArgs) (*protocol.PublishReply, error) {

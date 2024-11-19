@@ -12,7 +12,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-var testTopicMgr = store.NewTopicManager(context.Background(), "./test")
+var testTopicMgr = store.NewStore(context.Background(), "./test")
 var testServer = NewServer(":9999", testTopicMgr)
 var testClient *grpc.ClientConn
 var testPubsub protocol.PubsubServiceClient
